@@ -17,6 +17,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import CategoryPage from './pages/CategoryPage';
 import Phonebook from './pages/Phonebook';
+import AdminLog from './pages/AdminLog';
+import Admin from './pages/Admin';
 
 const queryClient = new QueryClient();
 
@@ -47,6 +49,22 @@ function AppContent() {
           <ProtectedRoute>
             <Phonebook />
           </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/admin-log" 
+        element={
+      
+            <AdminLog />
+    
+        } 
+      />
+      <Route 
+        path="/admin" 
+        element={
+      
+            <Admin />
+    
         } 
       />
       <Route 

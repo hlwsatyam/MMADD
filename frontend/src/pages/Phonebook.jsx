@@ -8,7 +8,8 @@ import {
   RightOutlined,
   SearchOutlined,
   MenuOutlined,
-  CloseOutlined
+  CloseOutlined,
+  BackwardOutlined
 } from '@ant-design/icons';
 import { Input, Spin, message, Avatar, Drawer } from 'antd';
 import axios from 'axios';
@@ -32,7 +33,7 @@ const Phonebook = () => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/users/all-users', {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/users/all-users`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(response.data);
@@ -64,12 +65,7 @@ const Phonebook = () => {
       title: 'बिजनेस लोन',
       desc: 'कम ब्याज दर पर लोन'
     },
-    {
-      id: 4,
-      url: 'https://images.unsplash.com/photo-1573164713988-2485fc7d8da4?w=400',
-      title: 'महिला सशक्तिकरण',
-      desc: 'महिलाओं के लिए खास स्कीम'
-    }
+   
   ];
 
   // Auto scroll images for mobile
@@ -100,15 +96,24 @@ const Phonebook = () => {
       {/* Mobile Header */}
       <div className="lg:hidden sticky top-0 z-50 bg-white shadow-lg">
         <div className="flex items-center justify-between p-4">
+
+<button className="p-2 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg">
+            <BackwardOutlined onClick={()=>window.location.href='/'} />
+          </button>
+
+
           <div>
+
+
+
+
+            
             <h1 className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
               अपने लोग
             </h1>
             <p className="text-xs text-gray-500">PHONE BOOK • फोन बुक</p>
           </div>
-          <button className="p-2 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg">
-            <MenuOutlined />
-          </button>
+          
         </div>
         
         {/* Mobile Search */}
@@ -383,23 +388,7 @@ const Phonebook = () => {
         )}
       </div>
 
-      {/* Mobile Footer */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-red-100 p-3">
-        <div className="flex justify-around items-center">
-          <button className="flex flex-col items-center text-red-500">
-            <PhoneOutlined className="text-xl" />
-            <span className="text-xs">फोनबुक</span>
-          </button>
-          <button className="flex flex-col items-center text-gray-500">
-            <UserOutlined className="text-xl" />
-            <span className="text-xs">प्रोफाइल</span>
-          </button>
-          <button className="flex flex-col items-center text-gray-500">
-            <SearchOutlined className="text-xl" />
-            <span className="text-xs">खोज</span>
-          </button>
-        </div>
-      </div>
+    
 
       {/* Desktop Footer */}
       <footer className="hidden lg:block mt-12 text-center py-6 border-t border-red-200">

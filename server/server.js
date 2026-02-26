@@ -10,7 +10,7 @@ const app = express();
 
 // CORS configuration for production
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://localhost:5000'],
+  origin:  '*',
   credentials: true,
   optionsSuccessStatus: 200
 };
@@ -47,8 +47,8 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/posts', require('./routes/posts'));
 app.use('/api/upload', require('./routes/upload'));
-
-// Health check endpoint
+app.use('/api/affiliates', require('./routes/affiliateRoutes'));
+app.use('/api/ads', require('./routes/adRoutes')); // Add this
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 

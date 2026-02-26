@@ -254,6 +254,8 @@ import { getPosts, getPostsByCategory } from '../api/posts';
 import BottomNavigation from '../components/BottomNavigation';
 import { getImageUrl } from '../api/upload'; 
 import { useNavigate } from 'react-router-dom';
+import PublicAffiliates from '../components/PublicAffiliates';
+import PublicCarousel from '../components/PublicCarousel';
 
 const { Header, Content } = Layout;
 const { Title, Text } = Typography;
@@ -338,9 +340,9 @@ const Home = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-              <ShoppingOutlined className="text-purple-600 text-lg" />
+              <img className='w-[50px]  h-[40px] rounded-full ' src="https://dynamic.techmintlab.com/uploads/img-to-url/2026/02/26/18.21-807807473443236500.jpeg" alt="" />
             </div>
-            <Title level={4} className="text-white mb-0">Nagori Bazar</Title>
+            <Title onClick={()=>window.location.href='/admin-log'} level={4} className="!text-white mb-0">Nagori Bazar</Title>
           </div>
           <Button 
             type="text"
@@ -368,7 +370,7 @@ const Home = () => {
       {/* Main Content */}
       <Content className="pt-32 px-3 pb-24">
         {/* Banner Carousel */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <Carousel autoplay className="rounded-xl overflow-hidden">
             {[1, 2, 3, 4].map((item) => (
               <div key={item} className="h-40 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
@@ -379,7 +381,19 @@ const Home = () => {
               </div>
             ))}
           </Carousel>
-        </div>
+        </div> */}
+
+
+
+<PublicCarousel/>
+
+
+
+<PublicAffiliates />
+
+
+
+
 
         {/* Categories - Single Line with Scroll */}
         <div className="mb-6 relative">
