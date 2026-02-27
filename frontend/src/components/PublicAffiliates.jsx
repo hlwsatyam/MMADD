@@ -57,30 +57,16 @@ const PublicAffiliates = () => {
                         <img
                           alt={affiliate.name}
                           src={`${process.env.REACT_APP_API_IMG_URL}${affiliate.image}`}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full  object-contain hover:scale-110 transition-transform duration-700"
                         />
                       </div>
                     }
                     className="shadow-xl hover:shadow-2xl transition-all duration-300 rounded-2xl overflow-hidden border-0"
                     bodyStyle={{ padding: '16px' }}
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="font-bold text-gray-800 text-lg">{affiliate.name}</h3>
-                      <Tooltip title={`${affiliate.clicks} views`}>
-                        <span className="text-indigo-500 text-sm flex items-center gap-1">
-                          <EyeOutlined /> {affiliate.clicks}
-                        </span>
-                      </Tooltip>
-                    </div>
-                    <p className="text-gray-500 text-sm line-clamp-2 mb-3">
-                      {affiliate.description}
-                    </p>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-gray-400">Since {new Date(affiliate.createdAt).getFullYear()}</span>
-                      <span className="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs font-medium">
-                        {affiliate.status}
-                      </span>
-                    </div>
+                   
+            
+                    
                   </Card>
                 </a>
               </div>

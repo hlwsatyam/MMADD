@@ -45,7 +45,7 @@ router.put('/complete-profile', auth, async (req, res) => {
             mobileNumber,
             address,canProvideJob,lookingForJob,
             pincode,
-            village,
+            village,businessAddress,
             caste,
             firstName,
             lastName
@@ -69,7 +69,7 @@ router.put('/complete-profile', auth, async (req, res) => {
                 address,lookingForJob,canProvideJob,
                 pincode,
                 state,
-                city,
+                city,businessAddress,
                 village,
                 caste,
                 firstName,

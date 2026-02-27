@@ -155,16 +155,7 @@ const CompleteProfile = () => {
   </Radio.Group>
 </Form.Item>
 
-<Form.Item
-  label="क्या आप नौकरी प्रदान कर सकते हैं?"
-  name="canProvideJob"
-  rules={[{ required: true, message: 'कृपया एक विकल्प चुनें' }]}
->
-  <Radio.Group>
-    <Radio value="yes">हाँ</Radio>
-    <Radio value="no">नहीं</Radio>
-  </Radio.Group>
-</Form.Item>
+ 
 
 
 
@@ -243,6 +234,24 @@ const CompleteProfile = () => {
               />
             </Form.Item>
           </div>
+
+
+
+
+
+    <Form.Item
+              label="Busines  Address"
+              name="businessAddress"
+              rules={[{ required: true, message: 'Please Business address' }]}
+              className="md:col-span-2"
+            >
+              <Input.TextArea 
+                rows={3} 
+                size="large" 
+                placeholder="Enter Business address" 
+              />
+            </Form.Item>
+
 
           <Form.Item className="text-center mt-8">
             <Space>

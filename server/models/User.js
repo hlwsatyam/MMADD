@@ -71,6 +71,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    businessAddress: {
+        type: String,
+        default: ''
+    },
 
 
    // ✅ New Fields Added
@@ -78,11 +82,7 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    canProvideJob: {
-        type: Boolean,
-        default: false
-    },
-
+   
 
 
 

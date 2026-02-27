@@ -57,25 +57,10 @@ const PublicCarousel = () => {
               <img
                 src={`${process.env.REACT_APP_API_IMG_URL}${ad.image}`}
                 alt={ad.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
               
-              {/* Simple Dark Overlay */}
-              <div className="absolute inset-0 bg-black/40" />
-              
-              {/* Simple Text Content - Center aligned */}
-              <div className="absolute inset-0 flex items-center justify-center text-white text-center px-4">
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-1">
-                    {ad.title}
-                  </h2>
-                  {ad.description && (
-                    <p className="text-sm md:text-base text-gray-200">
-                      {ad.description}
-                    </p>
-                  )}
-                </div>
-              </div>
+            
             </div>
           </div>
         ))}
